@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/views/nav.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -716,12 +716,12 @@
       <option name="presentableId" value="Default" />
       <updated>1479161594115</updated>
       <workItem from="1479161611585" duration="31526000" />
-      <workItem from="1479231792412" duration="96887000" />
+      <workItem from="1479231792412" duration="97049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128413000" />
+    <option name="totallyTimeSpent" value="128575000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,7 +1001,7 @@
     <entry file="file://$PROJECT_DIR$/views/nav.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
