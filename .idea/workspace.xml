@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/nav.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="232">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -106,13 +106,13 @@
         <option value="$PROJECT_DIR$/views/login.jade" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/fup.jade" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/views/signup.jade" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/dashboard.jade" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/views/dashboardNav.jade" />
         <option value="$PROJECT_DIR$/views/nav.jade" />
+        <option value="$PROJECT_DIR$/views/index.jade" />
       </list>
     </option>
   </component>
@@ -719,12 +719,12 @@
       <option name="presentableId" value="Default" />
       <updated>1479161594115</updated>
       <workItem from="1479161611585" duration="31526000" />
-      <workItem from="1479231792412" duration="100204000" />
+      <workItem from="1479231792412" duration="100286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131730000" />
+    <option name="totallyTimeSpent" value="131812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -985,14 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dashboardNav.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1009,6 +1001,14 @@
             <element signature="e#0#455#0" expanded="false" />
             <element signature="e#457#1275#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
