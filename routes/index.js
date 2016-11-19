@@ -270,7 +270,7 @@ console.log("Login Email First  "+req.session.userEmail);
           res.redirect("dashboard1");
         }
         else{
-          res.redirect("login");
+          res.render('login',{msg:"Invalid Email or Password"});
         }
       });
       db.close();
