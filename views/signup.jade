@@ -1,34 +1,37 @@
 doctype
 html( lang="en" )
     head
-        title URL Shortener
+        title #{tittle}
         meta( charset='utf-8' )
         meta( http-equiv='X-UA-Compatible', content='IE=edge' )
         meta( name='viewport', content='width=device-width, initial-scale=1.0' )
         meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+        script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+        script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+        link(href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css')
         //- Bootswatch Theme
         link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+
         include nav
         br
         br
-    body(style="padding-bottom:10rem; background-color:lavender")
-        .container
-            div(class="form-group")
-                form#form_add_user(name="adduser", method="post", action="/signup" ,class="form-horizontal")
-
-                    input#input_username(type="text", placeholder="Enter Username", name="username" required ,class="form-control")
-                    br
-                    input#input_email(type="email", placeholder="Enter Email", name="email" required,class="form-control")
-                    br
-                    input#input_password(type="password", placeholder="Enter Password", name="password" required,class="form-control")
-                    br
-                    input#input_confirmpassword(type="password", placeholder="Confirm Password", name="confirm_password" required,class="form-control")
-                    br
-                    div(class="col-md-12 text-center")
-                        label #{msg}
-                        br
-                        br
-                    div(class="col-md-12 text-center")
-                        button#submit_user(type="submit",class="btn btn-primary btn-lg") submit
+  body(style="padding-bottom:10rem; background-color:lavender")
+    .container
+        div(class="form-group")
+            form#form_add_user(name="adduser", method="post", action="/signup" ,class="form-horizontal")
+                input#input_username(type="text", placeholder="Enter Username", name="username" required ,class="form-control")
+                br
+                input#input_email(type="email", placeholder="Enter Email", name="email" required,class="form-control")
+                br
+                input#input_password(type="password", placeholder="Enter Password", name="password" required,class="form-control")
+                br
+                input#input_confirmpassword(type="password", placeholder="Confirm Password", name="confirm_password" required,class="form-control")
+                br
+                div(class="col-md-12 text-center")
+                    label #{msg}
+                br
+                br
+                div(class="col-md-12 text-center")
+                    button#submit_user(type="submit",class="btn btn-primary btn-lg") submit
 
 
