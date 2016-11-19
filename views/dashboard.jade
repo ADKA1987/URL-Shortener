@@ -37,8 +37,8 @@ html( lang="en" )
                             tbody
                                 each url, i in dashboard
                                     tr
-                                        td  #{url.oldurl}
-                                        td
+                                        td(class="col-xs-6 col-sm-3 ")  #{url.oldurl}
+                                        td(class="col-md-3")
                                             a(href= url.newurl class="btn btn-info") #{'aurls.herokuapp.com/'+ url.newurl}
                                         td
                                             button(type="submit",value= url.newurl,name="submit" ,id=url.newurl,class="btn btn-danger btn-xs glyphicon glyphicon-remove")

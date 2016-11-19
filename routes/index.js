@@ -116,10 +116,10 @@ router.get('/signup', function(req, res, next) {
 
 router.get('/login',function (req, res) {
 
-  res.render('login',{title:'Login'});
+  res.render('login',{title:'Login',msg:""});
 });
 
-router.post('/adduser', function(req, res) {
+router.post('/signup', function(req, res) {
 
 
   var useremail = req.body.email;
@@ -141,7 +141,8 @@ router.post('/adduser', function(req, res) {
             res.send(err);
             db.close();
           } else {
-            res.redirect('login');
+            res.render('login',
+                {msg:"You are registered and You can login with your Email and Password"});
             db.close();
           }
         });
@@ -183,7 +184,8 @@ router.post('/adduser', function(req, res) {
                 } else {
                   userURLS=[];
                   // Redirect to the updated student list
-                  res.redirect("login");
+                  res.render('login',
+                      {msg:"You are registered and You can login with your Email and Password"});
                 }
                 // Close the database
                 db.close();

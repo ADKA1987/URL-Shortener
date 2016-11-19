@@ -19,6 +19,10 @@ html( lang="en" )
         .container
             div(class="col-md-12 text-center")
                 form#form_login_user(name="loginuser", method="post", action="/loginuser" class="form-horizontal")
+                    label #{msg}
+                    br
+                    br
+                    br
                     div(class="col-md-12 text-center")
                         input#input_email(type="email", placeholder="Enter Email", name="email" required class="form-control")
                         input#input_password(type="password", placeholder="Enter Password", name="password" required class="form-control")
