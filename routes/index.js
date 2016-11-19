@@ -285,6 +285,7 @@ router.post('/main',function (req, res) {
   var MongoClient = mongodb.MongoClient;
   var submitvalue= req.body.submit;
   var userURLS=[];
+
   if(submitvalue=="url") {
 
     var userurl = req.body.urltext;
@@ -331,12 +332,13 @@ router.post('/main',function (req, res) {
           var collection = db.collection('urls');
           var collectionPublic = db.collection('publicurl');
           genurl = randomString(5);
+          console.log("Found User URL "+req.session.userEmail);
           var url = {
             email: req.session.userEmail,
             newurl: genurl,
             oldurl: userurl
           };
-          collection.find({oldurl: userurl}).toArray(function (err, doc) {
+          collection.find({oldurl: userurl,email:req.session.userEmail}).toArray(function (err, doc) {
             if (err) {
               res.send(err);
             } else if (doc.length) {
@@ -355,6 +357,7 @@ router.post('/main',function (req, res) {
                   foundedURLArray=doc;
                   foundedURL=foundedURLArray[0].newurl;
                   console.log(foundedURL);
+                  console.log("This is the insert" +req.session.userEmail);
                   collection.insert({email:req.session.userEmail,oldurl:userurl,newurl:foundedURL}, function (err, doc) {
                     if (err) {
                       res.send(err);
@@ -442,7 +445,7 @@ router.post('/main',function (req, res) {
     var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
     var MongoClient = mongodb.MongoClient;
     var deleteOneRaw=req.body.submit;
-    var urlsAfterDeleteOne;
+
 
 
     MongoClient.connect(url, function(err, db){
@@ -471,6 +474,7 @@ router.post('/main',function (req, res) {
   function FindTherestURLS() {
     var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
     var MongoClient = mongodb.MongoClient;
+    var urlsAfterDeleteOne;
     MongoClient.connect(url, function(err, db){
       if (err) {
         console.log('Unable to connect to the Server:', err);
