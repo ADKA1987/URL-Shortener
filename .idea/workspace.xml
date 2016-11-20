@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f08744da-c8c9-4a1b-acbc-1f3e787c973d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/dashboard.jade" afterPath="$PROJECT_DIR$/views/dashboard.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/dashboardNav.jade" afterPath="$PROJECT_DIR$/views/dashboardNav.jade" />
     </list>
     <ignored path="test10.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,33 +25,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="439" column="29" selection-start-line="439" selection-start-column="29" selection-end-line="439" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="261" column="35" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
               <folding>
-                <element signature="e#780#821#0" expanded="false" />
-                <element signature="e#904#988#0" expanded="false" />
-                <element signature="e#1027#2987#0" expanded="false" />
-                <element signature="e#3038#3094#0" expanded="false" />
-                <element signature="e#3138#3187#0" expanded="false" />
-                <element signature="e#3233#5166#0" expanded="false" />
-                <element signature="e#3316#3920#0" expanded="false" />
-                <element signature="e#5215#7530#0" expanded="false" />
-                <element signature="e#5561#6672#0" expanded="false" />
-                <element signature="e#5936#6650#0" expanded="false" />
-                <element signature="e#6747#7525#0" expanded="false" />
-                <element signature="e#7125#7495#0" expanded="false" />
-                <element signature="e#12030#13003#0" expanded="false" />
-                <element signature="e#12204#12366#0" expanded="false" />
-                <element signature="e#13217#13628#0" expanded="false" />
+                <element signature="e#796#837#0" expanded="false" />
+                <element signature="e#920#1004#0" expanded="false" />
+                <element signature="e#1043#3003#0" expanded="false" />
+                <element signature="e#3054#3110#0" expanded="false" />
+                <element signature="e#3154#3203#0" expanded="false" />
+                <element signature="e#3249#5182#0" expanded="false" />
+                <element signature="e#3332#3936#0" expanded="false" />
+                <element signature="e#6734#7512#0" expanded="false" />
+                <element signature="e#7112#7482#0" expanded="false" />
+                <element signature="e#7821#11790#0" expanded="false" />
+                <element signature="e#8370#9393#0" expanded="false" />
+                <element signature="e#9447#11782#0" expanded="false" />
+                <element signature="e#11998#12971#0" expanded="false" />
+                <element signature="e#12172#12334#0" expanded="false" />
+                <element signature="e#13185#13596#0" expanded="false" />
+                <element signature="n#!!block;n#randomString#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/dashboard.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -81,6 +82,16 @@
                 <element signature="e#950#1050#0" expanded="false" />
                 <element signature="e#1195#2372#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboardNav.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/dashboardNav.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,12 +134,12 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/login.jade" />
         <option value="$PROJECT_DIR$/views/nav.jade" />
-        <option value="$PROJECT_DIR$/views/dashboardNav.jade" />
         <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/signup.jade" />
         <option value="$PROJECT_DIR$/views/dashboard.jade" />
+        <option value="$PROJECT_DIR$/views/dashboardNav.jade" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -683,12 +694,12 @@
       <updated>1479161594115</updated>
       <workItem from="1479161611585" duration="31526000" />
       <workItem from="1479231792412" duration="140878000" />
-      <workItem from="1479581753928" duration="17026000" />
+      <workItem from="1479581753928" duration="17965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189430000" />
+    <option name="totallyTimeSpent" value="190369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +712,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -710,7 +721,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21222606" sideWeight="0.502445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30680507" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30680507" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12897311" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -758,21 +769,22 @@
         <state relative-caret-position="1309">
           <caret line="272" column="60" selection-start-line="272" selection-start-column="60" selection-end-line="272" selection-end-column="60" />
           <folding>
-            <element signature="e#780#821#0" expanded="false" />
-            <element signature="e#904#988#0" expanded="false" />
-            <element signature="e#1027#2987#0" expanded="false" />
-            <element signature="e#3038#3094#0" expanded="false" />
-            <element signature="e#3138#3187#0" expanded="false" />
-            <element signature="e#3233#5166#0" expanded="false" />
-            <element signature="e#3316#3920#0" expanded="false" />
-            <element signature="e#5215#7530#0" expanded="false" />
-            <element signature="e#5561#6672#0" expanded="false" />
-            <element signature="e#5936#6650#0" expanded="false" />
-            <element signature="e#6747#7525#0" expanded="false" />
-            <element signature="e#7125#7495#0" expanded="false" />
-            <element signature="e#12030#13003#0" expanded="false" />
-            <element signature="e#12204#12366#0" expanded="false" />
-            <element signature="e#13217#13628#0" expanded="false" />
+            <element signature="e#796#837#0" expanded="false" />
+            <element signature="e#920#1004#0" expanded="false" />
+            <element signature="e#1043#3003#0" expanded="false" />
+            <element signature="e#3054#3110#0" expanded="false" />
+            <element signature="e#3154#3203#0" expanded="false" />
+            <element signature="e#3249#5182#0" expanded="false" />
+            <element signature="e#3332#3936#0" expanded="false" />
+            <element signature="e#6734#7512#0" expanded="false" />
+            <element signature="e#7112#7482#0" expanded="false" />
+            <element signature="e#7821#11790#0" expanded="false" />
+            <element signature="e#8370#9393#0" expanded="false" />
+            <element signature="e#9447#11782#0" expanded="false" />
+            <element signature="e#11998#12971#0" expanded="false" />
+            <element signature="e#12172#12334#0" expanded="false" />
+            <element signature="e#13185#13596#0" expanded="false" />
+            <element signature="n#!!block;n#randomString#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,21 +842,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#780#821#0" expanded="false" />
-            <element signature="e#904#988#0" expanded="false" />
-            <element signature="e#1027#2987#0" expanded="false" />
-            <element signature="e#3038#3094#0" expanded="false" />
-            <element signature="e#3138#3187#0" expanded="false" />
-            <element signature="e#3233#5166#0" expanded="false" />
-            <element signature="e#3316#3920#0" expanded="false" />
-            <element signature="e#5215#7530#0" expanded="false" />
-            <element signature="e#5561#6672#0" expanded="false" />
-            <element signature="e#5936#6650#0" expanded="false" />
-            <element signature="e#6747#7525#0" expanded="false" />
-            <element signature="e#7125#7495#0" expanded="false" />
-            <element signature="e#12030#13003#0" expanded="false" />
-            <element signature="e#12204#12366#0" expanded="false" />
-            <element signature="e#13217#13628#0" expanded="false" />
+            <element signature="e#796#837#0" expanded="false" />
+            <element signature="e#920#1004#0" expanded="false" />
+            <element signature="e#1043#3003#0" expanded="false" />
+            <element signature="e#3054#3110#0" expanded="false" />
+            <element signature="e#3154#3203#0" expanded="false" />
+            <element signature="e#3249#5182#0" expanded="false" />
+            <element signature="e#3332#3936#0" expanded="false" />
+            <element signature="e#6734#7512#0" expanded="false" />
+            <element signature="e#7112#7482#0" expanded="false" />
+            <element signature="e#7821#11790#0" expanded="false" />
+            <element signature="e#8370#9393#0" expanded="false" />
+            <element signature="e#9447#11782#0" expanded="false" />
+            <element signature="e#11998#12971#0" expanded="false" />
+            <element signature="e#12172#12334#0" expanded="false" />
+            <element signature="e#13185#13596#0" expanded="false" />
+            <element signature="n#!!block;n#randomString#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -928,14 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dashboardNav.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/login.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -980,30 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="439" column="29" selection-start-line="439" selection-start-column="29" selection-end-line="439" selection-end-column="29" />
-          <folding>
-            <element signature="e#780#821#0" expanded="false" />
-            <element signature="e#904#988#0" expanded="false" />
-            <element signature="e#1027#2987#0" expanded="false" />
-            <element signature="e#3038#3094#0" expanded="false" />
-            <element signature="e#3138#3187#0" expanded="false" />
-            <element signature="e#3233#5166#0" expanded="false" />
-            <element signature="e#3316#3920#0" expanded="false" />
-            <element signature="e#5215#7530#0" expanded="false" />
-            <element signature="e#5561#6672#0" expanded="false" />
-            <element signature="e#5936#6650#0" expanded="false" />
-            <element signature="e#6747#7525#0" expanded="false" />
-            <element signature="e#7125#7495#0" expanded="false" />
-            <element signature="e#12030#13003#0" expanded="false" />
-            <element signature="e#12204#12366#0" expanded="false" />
-            <element signature="e#13217#13628#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1025,6 +1006,39 @@
         <state relative-caret-position="170">
           <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dashboardNav.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="261" column="35" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
+          <folding>
+            <element signature="e#796#837#0" expanded="false" />
+            <element signature="e#920#1004#0" expanded="false" />
+            <element signature="e#1043#3003#0" expanded="false" />
+            <element signature="e#3054#3110#0" expanded="false" />
+            <element signature="e#3154#3203#0" expanded="false" />
+            <element signature="e#3249#5182#0" expanded="false" />
+            <element signature="e#3332#3936#0" expanded="false" />
+            <element signature="e#6734#7512#0" expanded="false" />
+            <element signature="e#7112#7482#0" expanded="false" />
+            <element signature="e#7821#11790#0" expanded="false" />
+            <element signature="e#8370#9393#0" expanded="false" />
+            <element signature="e#9447#11782#0" expanded="false" />
+            <element signature="e#11998#12971#0" expanded="false" />
+            <element signature="e#12172#12334#0" expanded="false" />
+            <element signature="e#13185#13596#0" expanded="false" />
+            <element signature="n#!!block;n#randomString#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

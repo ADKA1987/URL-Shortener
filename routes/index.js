@@ -14,7 +14,7 @@ var jsdom = require('jsdom');
 var cookie = require("express-session/session/cookie.js");
 config.webhost='http://aurls.herokuapp.com/';
 var cheerio = require('cheerio');
-
+var userURLS=[];
 router.use(cookieParser());
 
 router.use(expressSession({secret:'somesecrettokenhere'}));
@@ -198,7 +198,6 @@ console.log("Login Email First  "+req.session.userEmail);
           if (err) {
             res.send(err);
           } else if (result.length) {
-            var userURLS=[];
             userURLS=result;
             var name;
             console.log(userURLS);
@@ -261,7 +260,6 @@ router.post('/main',function (req, res) {
   var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
   var MongoClient = mongodb.MongoClient;
   var submitvalue= req.body.submit;
-  var userURLS=[];
   var userurl = req.body.urltext;
   var urlTitle;
   if(submitvalue=="url") {
@@ -450,14 +448,12 @@ router.post('/main',function (req, res) {
           if (err) {
             res.send(err);
           } else if (result.length) {
-            console.log("Test");
             urlsAfterDeleteOne=result;
             res.render('dashboard',{
               email: req.session.userEmail,
               "dashboard": urlsAfterDeleteOne
             });
           }else{
-            console.log("Test1111111111");
             urlsAfterDeleteOne=[];
             res.render('dashboard',{
               email: req.session.userEmail,
