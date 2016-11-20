@@ -390,7 +390,7 @@ router.post('/main',function (req, res) {
       res.render('dashboard',{
         email: req.session.userEmail,
         msg:"There are no URLs to delete!!!",
-        "dashboard": ""
+        "dashboard": userURLS=[]
       });
     });
 
@@ -407,6 +407,7 @@ router.post('/main',function (req, res) {
           }else if(result.length) {
             console.log(result.length);
           }else{
+            userURLS=[];
             res.redirect("dashboard3");
           }
         });
