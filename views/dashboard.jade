@@ -27,20 +27,24 @@ html( lang="en" )
                         a(href=newgeneratedurl) #{newgeneratedurl}
                     br
                     br
-                    div(class="container-fluid")
-                        table#information_table(class="table table-hover table-bordered table-condensed")
-                            thead
-                                tr
-                                    th Original URL
-                                    th New URL
-                            tbody
-                                each url, i in dashboard
-                                    tr
-                                        td(class="col-xs-6 col-sm-3" width="30%")  #{url.oldurl}
-                                        td(class="col-md-3")
-                                            a(href= url.newurl class="btn btn-info") #{'aurls.herokuapp.com/'+ url.newurl}
-                                        td
-                                            button(type="submit",value= url.newurl,name="submit" ,id=url.newurl,class="btn btn-danger btn-xs glyphicon glyphicon-remove")
+                    div(class="form-horizontal")
+                        div(class="row")
+                            div(class="col-md-3 col-sm-6 col-xs-12")
+                                table(id="productSizes" class="table")
+                                    thead
+                                        tr
+                                            th Original URL
+                                            th  New URL
+                                            th
+                                    tbody
+                                        each url, i in dashboard
+                                            tr
+                                                td(style="word-wrap: break-word;min-width: 500px;max-width: 1000px;")
+                                                    a(href= url.oldurl) #{url.urltitle}
+                                                td
+                                                    a(href= url.newurl class="btn btn-info") #{'aurls.herokuapp.com/'+ url.newurl}
+                                                td
+                                                    button(type="submit",value= url.newurl,name="submit" ,id=url.newurl,class="btn btn-danger btn-xs glyphicon glyphicon-remove")
 
 
     form#form_removeAll(name="removeAll", method="post", action="/removeAll")

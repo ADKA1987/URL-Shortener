@@ -10,7 +10,8 @@ var users = require('./routes/users');
 var MongoClient = require("mongodb");
 var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
 var app = express();
-var sess;
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -90,42 +91,13 @@ app.get('/logout',function(req,res){
   }
   })
 });
-app.get('/',function(req,res){
-  sess = req.session;
-  console.log(sess);
-//Session set when user Request our app via URL
-  if(sess.email) {
-    /*
-     * This line check Session existence.
-     * If it existed will do some action.
-     */
-    res.redirect('/admin');
-  }
-  else {
-    res.render('index.html');
-  }
-});
 
-app.post('/login',function(req,res){
-  sess = req.session;
-//In this we are assigning email to sess.email variable.
-//email comes from HTML page.
-  sess.email=req.body.email;
-  res.end('done');
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
-});
-app.get('/signup', function(req, res) {
-  res.render('signup', { title: 'Signup' });
-});
-
-app.get('/login',function (re, res) {
-  res.render('login',{title:'Login'});
 });
 
 // error handler

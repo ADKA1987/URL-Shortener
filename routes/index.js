@@ -7,20 +7,14 @@ var request = require("request");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
-//var session = require('express-session');
-var NodeSession = require('node-session');
-var cookieSession = require('cookie-session')
-var app = express();
 var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
 var MongoClient = mongodb.MongoClient;
 var config ={};
 var jsdom = require('jsdom');
-var req = require("passport/lib/authenticator.js");
 var cookie = require("express-session/session/cookie.js");
-//session = new NodeSession({secret: 'Q3UBzdH9GEfiRCTKbi5MTPyChpzXLsTD'});
 config.webhost='http://aurls.herokuapp.com/';
+var cheerio = require('cheerio');
 
-//app.use(session({secret: 'ssshhhhh'}));
 router.use(cookieParser());
 
 router.use(expressSession({secret:'somesecrettokenhere'}));
@@ -32,7 +26,7 @@ router.get('/test',function (req, res) {
 
 var publicURL="";
 var publicfoundedURL="";
-//var publicUrl;
+
 router.get('/',function (req, res) {
   res.render('index',{tittle:'URL Shortener',
     newurl:"",
@@ -115,26 +109,18 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.get('/login',function (req, res) {
-
   res.render('login',{title:'Login',msg:""});
 });
 
 router.post('/signup', function(req, res) {
-
-
   var useremail = req.body.email;
-  //var Loginusername=req.body.username;
-
-
   router.get('/dashboard', function (req, res) {
-
 
     MongoClient.connect(url, function (err, db) {
       if (err) {
         console.log('Unable to connect to the Server', err);
       } else {
         console.log('Connection established to', url);
-
         var collection = db.collection('urls');
         collection.find({email:useremail}).toArray(function (err,doc) {
           if (err) {
@@ -155,11 +141,7 @@ router.post('/signup', function(req, res) {
       console.log('Unable to connect to the Server:', err);
     } else {
       console.log('Connected to Server:' + url);
-
-      // Get the documents collection
       var collection = db.collection('users');
-
-      // Get the user data passed from the form
       var user = {
         username: req.body.username,
         email: useremail,
@@ -174,25 +156,21 @@ router.post('/signup', function(req, res) {
             if(req.body.password!=req.body.confirm_password){
               res.render('signup',{ title:"URL Shortener",
                     msg:"Password Not Match"
-                  }
-              )
+              });
             }else{
-              // Insert the user data into the database
               collection.insert([user], function (err, doc) {
                 if (err) {
                   res.send(err);
                 } else {
                   userURLS=[];
-                  // Redirect to the updated student list
                   res.render('login',
                       {msg:"You are registered and You can login with your Email and Password"});
                 }
-                // Close the database
                 db.close();
               });
             }
           }
-        });
+      });
     }
   });
 });
@@ -280,21 +258,33 @@ console.log("Login Email First  "+req.session.userEmail);
 });
 
 router.post('/main',function (req, res) {
-
-  console.log(req.session.userEmail);
-
   var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
   var MongoClient = mongodb.MongoClient;
   var submitvalue= req.body.submit;
   var userURLS=[];
-
+  var userurl = req.body.urltext;
+  var urlTitle;
   if(submitvalue=="url") {
-
-    var userurl = req.body.urltext;
 
     if (userurl.length) {
       var genurl;
       var foundedURLArray;
+
+      //This Part Of getting the Page title, i copied from http://jonathanmh.com/web-scraping-web-crawling-pages-with-node-js/
+      //and i modified it.
+
+     request(userurl, function (error, response, body) {
+        if (!error) {
+          var $ = cheerio.load(body)
+
+          urlTitle= $('title').text();
+        }
+        else {
+          console.log("We’ve encountered an error: " + error);
+        }
+      });
+      console.log(urlTitle);
+
       router.get('/dashboardn', function (req, res) {
         MongoClient.connect(url, function (err, db) {
           if (err) {
@@ -333,57 +323,51 @@ router.post('/main',function (req, res) {
           console.log('Connected to Server');
           var collection = db.collection('urls');
           var collectionPublic = db.collection('publicurl');
-          genurl = randomString(5);
+          genurl = randomString(4);
           console.log("Found User URL "+req.session.userEmail);
           var url = {
             email: req.session.userEmail,
             newurl: genurl,
-            oldurl: userurl
+            oldurl: userurl,
+            urltitle:urlTitle
           };
           collection.find({oldurl: userurl,email:req.session.userEmail}).toArray(function (err, doc) {
             if (err) {
               res.send(err);
             } else if (doc.length) {
-              console.log(req.session.userEmail);
-              console.log("Tessssssssssssssssssssssst");
               foundedURLArray=doc;
               foundedURL=foundedURLArray[0].newurl;
               res.redirect("dashboardn");
             } else {
-              console.log("2");
               collectionPublic.find({oldurl: req.body.urltext}).toArray(function (err, doc) {
                 if(err){
                   res.send(err);
                 }else if(doc.length){
-                  console.log("3");
                   foundedURLArray=doc;
                   foundedURL=foundedURLArray[0].newurl;
-                  console.log(foundedURL);
-                  console.log("This is the insert" +req.session.userEmail);
-                  collection.insert({email:req.session.userEmail,oldurl:userurl,newurl:foundedURL}, function (err, doc) {
+                  collection.insert({email:req.session.userEmail,oldurl:userurl,newurl:foundedURL,urltitle:urlTitle}, function (err, doc) {
                     if (err) {
                       res.send(err);
                     } else {
                       foundedURL=foundedURLArray[0].newurl;
+                      urlTitle = foundedURLArray[0].urltitle;
                       res.redirect("dashboardn");
                     }
                   });
                 }else{
-                  console.log("4");
                   collection.insert([url], function (err, doc) {
                     if (err) {
                       res.send(err);
                     } else {
-                      console.log("Inserted into User database");
                       foundedURL=genurl;
                       res.redirect("dashboardn");
                     }
                   });
-                  collectionPublic.insert({oldurl: userurl,newurl:genurl}, function (err, doc) {
+                  collectionPublic.insert({oldurl: userurl,newurl:genurl,urltitle:urlTitle}, function (err, doc) {
                     if (err) {
                       res.send(err);
                     } else {
-                      console.log("Inserted into Public Database");
+                      console.log("Insert new URL Into public database");
                     }
                   });
                 }
@@ -396,70 +380,51 @@ router.post('/main',function (req, res) {
     }else{
       res.render('dashboard', {
         email: req.session.userEmail,
-        msg:"Enter URL",
+        msg:"Could not generate an empty url",
         "dashboard": userURLS
       });
     }
   }
   else if(submitvalue=="removeAll"){
     var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
-
     var MongoClient = mongodb.MongoClient;
-
     router.get('/dashboard3', function(req, res){
       res.render('dashboard',{
         email: req.session.userEmail,
         msg:"There are no URLs to delete!!!",
-        // Pass the returned database documents to Jade
-        //"dashboard": result
         "dashboard": userURLS
       });
-
     });
 
     MongoClient.connect(url, function(err, db){
-
       if (err) {
         console.log('Unable to connect to the Server:', err);
       } else {
         console.log('Connected to Server');
-
-        // Get the documents collection
         var collection = db.collection('urls');
         console.log("CHECK None exist email: "+ req.session.userEmail);
-        // Find the user data in the database
         collection.deleteMany({email:req.session.userEmail},function (err, result) {
           if(err){
             res.send(err);
           }else if(result.length) {
             console.log(result.length);
           }else{
-            var userURLS=[];
             res.redirect("dashboard3");
           }
         });
-        // Close the database
         db.close();
       }
     });
   }else{
-
     var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
     var MongoClient = mongodb.MongoClient;
     var deleteOneRaw=req.body.submit;
-
-
-
     MongoClient.connect(url, function(err, db){
-
       if (err) {
         console.log('Unable to connect to the Server:', err);
       } else {
         console.log('Connected to Server');
-
-        // Get the documents collection
         var collection = db.collection('urls');
-        // Remove the user data in the database
         collection.remove({newurl:deleteOneRaw},function (err, result) {
           if(err){
             res.send( err);
@@ -468,11 +433,10 @@ router.post('/main',function (req, res) {
           }
         });
       }
-      // Close the database
       db.close();
     });
 
-  }
+  };
   function FindTherestURLS() {
     var url = "mongodb://AlaaAlkassar:Alaa123!!!@ds151927.mlab.com:51927/users";
     var MongoClient = mongodb.MongoClient;
@@ -506,7 +470,6 @@ router.post('/main',function (req, res) {
   };
 
 });
-
 
 function randomString(len, charSet) {
   charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
