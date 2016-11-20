@@ -29,7 +29,7 @@ html( lang="en" )
                     br
                     div(class="form-horizontal")
                         div(class="row")
-                            div(class="col-md-3 col-sm-6 col-xs-12")
+                            div(class="")
                                 table(id="productSizes" class="table")
                                     thead
                                         tr
@@ -39,12 +39,9 @@ html( lang="en" )
                                     tbody
                                         each url, i in dashboard
                                             tr
-                                                td(style="word-wrap: break-word;min-width: 500px;max-width: 1000px;")
+                                                td(style="word-wrap: break-word;min-width: 20px;max-width: 30;")
                                                     a(href= url.oldurl) #{url.urltitle}
                                                 td
                                                     a(href= url.newurl class="btn btn-info") #{'aurls.herokuapp.com/'+ url.newurl}
                                                 td
                                                     button(type="submit",value= url.newurl,name="submit" ,id=url.newurl,class="btn btn-danger btn-xs glyphicon glyphicon-remove")
-
-
-    form#form_removeAll(name="removeAll", method="post", action="/removeAll")
