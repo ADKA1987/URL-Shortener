@@ -390,7 +390,7 @@ router.post('/main',function (req, res) {
       res.render('dashboard',{
         email: req.session.userEmail,
         msg:"There are no URLs to delete!!!",
-        "dashboard": userURLS
+        "dashboard": ""
       });
     });
 
